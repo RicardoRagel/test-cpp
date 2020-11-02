@@ -13,6 +13,8 @@
 #include <set>
 #include <map>
 
+#include <algorithm>
+
 using namespace std;
 
 int main(int argc, char **argv)
@@ -146,7 +148,7 @@ int main(int argc, char **argv)
         }
         
         /*
-            Test 6: Standard containers: Sequence and Fixed-size Arrays. STD::ARRAY
+            Test 6: Standard containers: Sequence and Fixed-size Arrays. STD::ARRAY (c++11)
         */
         case 6:
         {
@@ -438,8 +440,112 @@ int main(int argc, char **argv)
             break;
         }
 
+        /*
+            Test 11: Standard containers. Function std::sort(itBegin, itEnd, Comparator) (c++ 17)
+        */
+        case 11:
+        {
+            // The function std::sort allow you to sort any standard container
+            cout << "STD::SORT" << endl;
+            cout << "--------" << endl;
+            
+            std::vector<string> my_strings = { "Francisco", "Fran", "Alberto", "Miguel Angel", "Victor Manuel", "Ricardo", 
+                                               "Vicente", "Rigoberto", "Zuleida", "Clara", "Koeman", "Kanoute", "Ana"};
+            
+            cout << endl << "Current unsorted vector: " << endl;
+            for(auto element : my_strings)
+                cout << element << endl;
+            
+            cout << endl << "Defaul sort, in alphabetical order: " << endl;
+            std::sort(my_strings.begin(), my_strings.end());
+            for(auto element : my_strings)
+                cout << element << endl;
+
+            cout << endl << "Custom sort, ordered by lenght: " << endl;
+            struct LengthComparator
+            {
+                bool operator() (const string &s1, const string &s2)
+                {
+                    return strlen(s1.c_str()) < strlen(s2.c_str());
+                }
+            };
+            std::sort(my_strings.begin(), my_strings.end(), LengthComparator());
+            for(auto element : my_strings)
+                cout << element << endl;
+            
+            break;
+        }
+
+
+        /*
+            Test 12: Standard containers. Functions std::min_element(itBegin, itEnd, Comparator) and std::max_element (c++ 17)
+                     
+                     Extra: std::distance(it1, it2) return the number of hops from it1 to it2 
+        */
+        case 12:
+        {
+            // Simply returns an iterator to the min and max values, and the distance (in hops) from two iterators
+            std::vector<int> v = {14, 2, 55, 33, 1800, 42, 100};
+            cout << "My vector: " << v[0];
+            for(auto it = ++v.begin(); it != v.end(); it++) 
+                cout << ", " << *it;
+            cout << endl;
+            
+            auto it_min = std::min_element(v.begin(), v.end());
+            auto it_max = std::max_element(v.begin(), v.end());
+            cout << "Min: " << *it_min << ", Max: " << *it_max << endl;
+            cout << "Distance from Min to Max: " << std::distance(it_min, it_max) << endl;
+
+            break;
+        }
+
+        /*
+            Test 13: Lambda functions: 
+                        * Funciones anónimas que son creadas en tiempo de ejecución y no en tiempo de compilación.
+                        * Posee unos corchetes con los parámetros de captura y después, como cualquier otra función, tiene entre paréntesis sus parámetros normales. Además tiene un cuerpo, en el que podemos realizar operaciones.
+                        * Si queremos marcarle el tipo de devolución, después de los parámetros, con una flecha podemos marcarle el tipo,
+        */
+        case 13:
+        {
+            int b = 1;
+            double c = 2.2;
+            cout << "b: " << b << endl;
+            cout << "c: " << c << endl;
+            // Lambda funtion:     
+            // auto function_name = [captured_params](input_params)->return_type { // Do stuff here };
+            
+            // Sin capturar nada
+            auto f1 = [](int a) -> double { return a + 2.2;};
+            cout << "Calling f1(3), a + 2.2 = "<< f1(3) << endl;
+            
+            // Capturando una copia de b y c
+            auto f2 = [b, c](int a) -> double 
+            {
+                //c = 3.3; You can not modify a captured parameter as copied
+                return a + c;
+            };   
+            cout << "Calling f2(3), a + c = "<< f2(3) << endl;
+
+            // Capturando una referencia de b y c
+            auto f3 = [&b, &c](int a) -> double
+            {
+                c += 1;
+                return a + c;
+            };
+            cout << "Calling f3(3), c+1 and a + c = " << f3(3) << ". c = " << c << endl;
+            
+            // Lo tipico es usar directamente [=] or [&] para capturar todo el scope por copia or referencia
+
+            break;
+        }
+
+
+        ///TODO: std::function, make_function, threads, std::copy, std::find, std::for_each, ...
+
         default:
             cout << "Selected test doesn't exist" << endl;
+
+
 
     }//switch
 
