@@ -485,7 +485,6 @@ int main(int argc, char **argv)
             break;
         }
 
-
         /*
             Test 12: Standard containers. Functions std::min_element(itBegin, itEnd, Comparator) and std::max_element (c++ 17)
                      

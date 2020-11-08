@@ -1,9 +1,12 @@
 # test-cpp
-Simple package to perform C++ tests
+This repository contains several packages to perform C++ tests:
 
-## Installation
+1. **TestCpp**: Different examples using classes and STD containers.
+2. **TestThread**: 
 
-As usual for a CMake project:
+## Build
+
+You can build the complete repository or each package individually using CMake as usual:
 
 ```bash
 mkdir build && cd build
@@ -13,8 +16,10 @@ make
 
 # Usage
 
-Execute the program selecting the Test number:
+1. **TestCpp**: Execute the program selecting the Test number:
 
-```bash
-./test_cpp <TEST_NUMBER>
-```
+    ```bash
+    ./test_cpp <TEST_NUMBER>
+    ```
+
+2. **TestThread**: 
