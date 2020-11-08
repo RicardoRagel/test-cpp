@@ -15,6 +15,8 @@ class TestCpp
 
         int public_data_;
 
+        int getPrivateData();
+
     private:
         int private_data_;
 };

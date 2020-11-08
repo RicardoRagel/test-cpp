@@ -13,6 +13,11 @@ TestCpp::TestCpp(int value)
     private_data_ = value;
 }
 
+int TestCpp::getPrivateData()
+{
+    return private_data_;
+}
+
 Derived::Derived()
 {
     printf("(Derived) Default Constructor\n");

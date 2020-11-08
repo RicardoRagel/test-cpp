@@ -40,11 +40,20 @@ int main(int argc, char **argv)
     switch(run_test)
     {
         /*
-            Test 1: calling to the non-default constructor of the base class
+            Test 1: calling different constructor of the base class
         */
         case 1:
         {
-            TestCpp test_cpp(33);
+            cout << "-- Calling Non-default constructor: " << endl;
+            TestCpp test_cpp_1(33);
+
+            cout << "-- Calling default constructor: " << endl;
+            TestCpp test_cpp_2;
+
+            cout << "-- Calling copy constructor, that has not be defined (so it doesn't print anything): " << endl;
+            TestCpp test_cpp_3 = test_cpp_1;
+
+            cout << "-- However, it has copied the data: " << test_cpp_3.getPrivateData() << endl;
             
             break;
         }
