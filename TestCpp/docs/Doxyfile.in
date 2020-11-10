@@ -1,0 +1,15 @@
+# Input files and/or folders
+INPUT                  = @CMAKE_CURRENT_SOURCE_DIR@/include/ \
+                         @CMAKE_CURRENT_SOURCE_DIR@/src/ \
+                         @CMAKE_CURRENT_SOURCE_DIR@/docs
+
+# Output folder where docs will be placed
+OUTPUT_DIRECTORY       = @CMAKE_CURRENT_BINARY_DIR@/docs_doxygen/
+
+# Configuration
+PROJECT_NAME = "C++ Tests and Examples"
+VERBATIM_HEADERS = YES  # Include header files into the documentation
+SOURCE_BROWSER = YES    # Include source files into the documentation and links to definitions
+EXTRACT_PRIVATE = YES   # Include private members into the documentation
+GENERATE_LATEX = NO
+RECURSIVE = YES

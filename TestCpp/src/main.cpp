@@ -1,3 +1,13 @@
+/*! \mainpage Cpp Tests Package
+ *
+ * \section intro_sec A Compilation of different Cpp examples
+ *
+ * This package contains several examples grouped in a switch. 
+ * Run the executable following of a number to check each one.
+ * 
+ * The classes TestCpp, Derived and Derived used in these examples
+ * have been documented in this API.
+ */
 #include "TestCpp.hpp"
 
 #include <iostream>
