@@ -371,57 +371,57 @@ int main(int argc, char **argv)
             
             // Set of non-basic class, you need to overload the operator < for that class or
             // provide a Comparator function to the class:
-            struct DerivedComparator
-            {
-                bool operator()(const Derived &d1, const Derived &d2)
-                {
-                    return d1.public_data_ < d2.public_data_; // Use > if you want from higher to lower order
-                }
-            };
-            std::set<Derived, DerivedComparator> my_set = {Derived(33), Derived(11), Derived(22)};
-            cout << endl << "A set of a non-basic class sorted by a Comparator function" << endl;
-            for(Derived element : my_set)
-                cout << element.public_data_ << endl;
+            // struct DerivedComparator
+            // {
+            //     bool operator()(const Derived &d1, const Derived &d2)
+            //     {
+            //         return d1.public_data_ < d2.public_data_; // Use > if you want from higher to lower order
+            //     }
+            // };
+            // std::set<Derived, DerivedComparator> my_set = {Derived(33), Derived(11), Derived(22)};
+            // cout << endl << "A set of a non-basic class sorted by a Comparator function" << endl;
+            // for(Derived element : my_set)
+            //     cout << element.public_data_ << endl;
 
-            std::set<Derived2> my_set_2 = {Derived2(33), Derived2(11), Derived2(22)};
-            cout << endl << "A set of a non-basic class sorted by his own operator <" << endl;
-            for(Derived element : my_set_2)
-                cout << element.public_data_ << endl;
+            // std::set<Derived2> my_set_2 = {Derived2(33), Derived2(11), Derived2(22)};
+            // cout << endl << "A set of a non-basic class sorted by his own operator <" << endl;
+            // for(Derived element : my_set_2)
+            //     cout << element.public_data_ << endl;
 
             // Using a std::set
-            cout << endl << "Using the set: " << endl;
-            cout << "You can use find(element) to get an iterator to that element" << endl;
-            auto it = my_set.find(Derived(22));
-            while(it != my_set.end())
-            {
-                cout << it->public_data_ << endl;
-                it++;
-            }
-            cout << "You can use lower_bound(element2) to get an iterator to closer element to the provided element2" << endl;
-            auto it_to_next = my_set.lower_bound(Derived(12));
-            while(it_to_next != my_set.end())
-            {
-                cout << it_to_next->public_data_ << endl;
-                it_to_next++;
-            }
-            // It exists another really similar: 
-            //      lower_bound =  returns an iterator to the first element not less than the given key
-            //      upper_bound =  returns an iterator to the first element greater than the given key
+            // cout << endl << "Using the set: " << endl;
+            // cout << "You can use find(element) to get an iterator to that element" << endl;
+            // auto it = my_set.find(Derived(22));
+            // while(it != my_set.end())
+            // {
+            //     cout << it->public_data_ << endl;
+            //     it++;
+            // }
+            // cout << "You can use lower_bound(element2) to get an iterator to closer element to the provided element2" << endl;
+            // auto it_to_next = my_set.lower_bound(Derived(12));
+            // while(it_to_next != my_set.end())
+            // {
+            //     cout << it_to_next->public_data_ << endl;
+            //     it_to_next++;
+            // }
+            // // It exists another really similar: 
+            // //      lower_bound =  returns an iterator to the first element not less than the given key
+            // //      upper_bound =  returns an iterator to the first element greater than the given key
 
-            // WARNING: Values (Keys) on a std::set are not modifiable. To modify them, you have to remove and insert it
-            cout << "You can NOT modify elements / keys on a std::set, you need to extract or remove it and insert a new one:" << endl;
-            auto it_22 = my_set.find(Derived(22));
-            Derived d = *it_22;
-            cout << "Copied: " << d.public_data_ << endl;
-            my_set.erase(it_22);
-            cout << "Removed: " << endl;
-            for(Derived element : my_set)
-                cout << element.public_data_ << endl;
-            d.public_data_ = 23;
-            cout << "Modified: " << d.public_data_ << endl;
-            my_set.insert(d);
-            for(Derived element : my_set)
-                cout << element.public_data_ << endl;
+            // // WARNING: Values (Keys) on a std::set are not modifiable. To modify them, you have to remove and insert it
+            // cout << "You can NOT modify elements / keys on a std::set, you need to extract or remove it and insert a new one:" << endl;
+            // auto it_22 = my_set.find(Derived(22));
+            // Derived d = *it_22;
+            // cout << "Copied: " << d.public_data_ << endl;
+            // my_set.erase(it_22);
+            // cout << "Removed: " << endl;
+            // for(Derived element : my_set)
+            //     cout << element.public_data_ << endl;
+            // d.public_data_ = 23;
+            // cout << "Modified: " << d.public_data_ << endl;
+            // my_set.insert(d);
+            // for(Derived element : my_set)
+            //     cout << element.public_data_ << endl;
             
             // You can also merge different std::set like for std::list
 

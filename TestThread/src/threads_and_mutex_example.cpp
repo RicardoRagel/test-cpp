@@ -19,7 +19,7 @@ using namespace std;
 using Vector = std::vector<int>;
 
 // Global var
-std::mutex v_access; // Ensure it doesn't read the vector while other thread is writting and viceversa.
+std::mutex v_access; // Ensure it doesn't read the vector while other thread is writing and viceversa.
 
 void reader(Vector &v)
 {
@@ -76,14 +76,14 @@ int main(int argc, char **argv)
 
     // Spawn two new threads
     std::cout << "(main) reader and writer will be executed concurrently...\n";
-    std::thread reader_th (reader, std::ref(v));  // It calls reader(v)
-    std::thread writer_th (writer, std::ref(v));  // It calls writer(v)
+    std::thread reader_th (reader, std::ref(v));  // It calls reader(v), passing v as reference
+    std::thread writer_th (writer, std::ref(v));  // It calls writer(v), passing v as reference
 
     // // Synchronize threads
     reader_th.join();   // pauses until reader finishes
     writer_th.join();   // pauses until writer finishes
 
-    std::cout << "(main) reader and writter completed.\n";
+    std::cout << "(main) reader and writer completed.\n";
 
     return 0;
 }

@@ -4,7 +4,7 @@ project(TestThread)
 # Compile against C++ 17
 set(CMAKE_CXX_STANDARD 17)
 
-# Finc Threads module
+# Find Threads module
 find_package (Threads)
 
 #########
