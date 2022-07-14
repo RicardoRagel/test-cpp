@@ -1,8 +1,19 @@
-cmake_minimum_required(VERSION 2.8.9)
+cmake_minimum_required(VERSION 2.8.12)
 project(test-cpp)
 
 #########
 # BUILD
 #########
+add_subdirectory(TestConst)
 add_subdirectory(TestCpp)
-add_subdirectory(TestThread)
+add_subdirectory(TestExceptions)
+add_subdirectory(TestFriend)
+add_subdirectory(TestInheritance)
+add_subdirectory(TestMix)
+add_subdirectory(TestOperands)
+add_subdirectory(TestReferences)
+add_subdirectory(TestSmartPointers)
+add_subdirectory(TestStatic)
+add_subdirectory(TestTemplates)
+add_subdirectory(TestThreads)
+add_subdirectory(TestVirtual)

@@ -9,7 +9,6 @@ Testing the C++ Operands
 // Aliases
 using namespace std;
 
-
 class A
 {
     public:
@@ -17,11 +16,10 @@ class A
 
         A(int i)
         {
-            //i = i; // FUCK... setting arg i to its own value
+            //i = i; // WRONG... setting arg i to its own value
             this->i = i;
         }
 };
-
 
 class B 
 { 
