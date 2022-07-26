@@ -4,8 +4,8 @@ project(TestCpp)
 #########
 # SETUP
 #########
-# Compile against C++ 17
-set(CMAKE_CXX_STANDARD 17)
+# Compile against C++ 11
+set(CMAKE_CXX_STANDARD 11)
 
 # Documentation
 option(BUILD_DOC "Build doxygen documentation" OFF)

@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 2.8.12)
 project(TestSmartPointers)
 
-# Compile against C++ 17
-set(CMAKE_CXX_STANDARD 17)
+# Compile against C++ 14 (Smart Pointers)
+set(CMAKE_CXX_STANDARD 14)
 
 #########
 # BUILD
