@@ -9,4 +9,4 @@ set(CMAKE_CXX_STANDARD 11)
 #########
 
 # Example programs
-add_executable(test_clean src/clean_tests.cpp)
+add_executable(test_clean src/clean_test.cpp)
