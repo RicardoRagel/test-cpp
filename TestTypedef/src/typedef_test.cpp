@@ -46,7 +46,7 @@ int main(int argc, char **argv)
     cout << "MyStruct.name = " << my_struct.name << endl;     
 
     MyFnPtr my_fn_ptr = fun; // or &fun; In case of functions pointer they are identical.
-    cout << "MyFnPtr(69) = " << my_fn_ptr(69) << endl;     
+    cout << "MyFnPtr(69) = " << my_fn_ptr(69) << endl; // Or the identical result:
     // cout << "MyFnPtr(69) = " << (*my_fn_ptr)(69) << endl;     
 
     return 0;
