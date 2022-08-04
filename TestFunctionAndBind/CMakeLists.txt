@@ -10,3 +10,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 # Example programs
 add_executable(test_function_and_bind src/function_and_bind_test.cpp)
+add_executable(test_function_and_bind_in_a_class src/function_and_bind_in_a_class_test.cpp)
