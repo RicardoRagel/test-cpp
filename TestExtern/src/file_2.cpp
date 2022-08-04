@@ -1,6 +1,8 @@
 /*
 
-Testing the C++ extern keyword
+Testing the C++ extern keyword.
+
+Using a global variable and a global function defined in other program (that will be obviously linked to this one).
 
 */
 

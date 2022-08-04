@@ -2,7 +2,7 @@
 
 Testing the C++ extern keyword.
 
-Creating a global variable
+Creating a global variable and a global function.
 
 */
 
