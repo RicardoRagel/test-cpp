@@ -2,6 +2,9 @@
 
 Testing the C++ Keyword: static
 
+Basically, static means that it is a unique local (non extern) memory space. So, for example,
+all the object of a class with a static member (variable or function) will share this space.
+
 */
 
 #include <iostream> // std::cout
@@ -12,7 +15,7 @@ using namespace std;
 // A function with a static variable
 void fun(int arg)
 {
-    static int fun_var;
+    static int fun_var = 33;
 
     cout << endl << "(fun) Value of static var before set to arg: " << fun_var << endl;
 
@@ -48,7 +51,8 @@ class A
         }
 
 };
-int A::var = 0; // It is necessary to initialize it
+int A::var = 0; // It is necessary to initialize it, because it must be created before the main() is called.
+// Actually it can be done even if the variable is private.
 
 // A derivated class from a class with a static variable
 class B : public A
@@ -82,7 +86,8 @@ int main(int argc, char **argv)
     fun(1);
     fun(2);
 
-    cout << endl << "* The Keyword static makes that a variable in a class keeps the value, being the same for all the objects if this class:" << endl;
+    cout << endl << "* The Keyword static makes that a variable in a class keeps the value, being the same for all the objects \
+of this class or of a class derivated of that class:" << endl;
 
     A a1;
     a1.var = 33;
@@ -91,7 +96,7 @@ int main(int argc, char **argv)
     B b1;
     b1.print_var();
 
-    cout << endl << "* The Keyword static makes that a function in a class be accessible without creating an object:" << endl;
+    cout << endl << "* The Keyword static makes that a function in a class to be accessible without creating an object:" << endl;
     cout << "Accessing directly to the static member var using a static member function: " << A::get_var() << endl;
 
     return 0;
