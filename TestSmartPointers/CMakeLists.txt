@@ -10,3 +10,4 @@ set(CMAKE_CXX_STANDARD 14)
 
 # Example program
 add_executable(test_smart_pointers src/smart_pointers_example.cpp)
+add_executable(test_shared_and_weak src/shared_and_weak_example.cpp)
