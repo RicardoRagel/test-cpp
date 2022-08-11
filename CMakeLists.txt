@@ -4,6 +4,7 @@ project(test-cpp)
 #########
 # BUILD
 #########
+add_subdirectory(TestBits)
 add_subdirectory(TestConst)
 add_subdirectory(TestCpp)
 add_subdirectory(TestExceptions)
