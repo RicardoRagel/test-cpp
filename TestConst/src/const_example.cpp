@@ -58,10 +58,10 @@ int main(int argc, char **argv)
     /*
     Note about how to read complex variables in C++: https://www.codeproject.com/Articles/7042/How-to-interpret-complex-C-C-declarations
 
-    They must be read from left to right.
+    They must be read from right to left.
 
     const int * p;  => p is a pointer to a integer constant value
-    int * const;    => p is a constant pointer to an integer value
+    int * const p;  => p is a constant pointer to an integer value
 
     They are different, due to the const is applied to different things.
     */
