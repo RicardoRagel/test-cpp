@@ -39,6 +39,12 @@ class Base2
         void sayHello() { cout << "(Base2) Hello, my string is "  << str << " and my double " << y << endl; }
 };
 
+struct S
+{
+    int s1;
+    float s2;
+};
+
 int main(int argc, char **argv)
 {
     cout << endl;
@@ -53,6 +59,12 @@ int main(int argc, char **argv)
     cout << "member function: "; 
     b2->sayHello();
     cout << endl;
+
+    // Let's do the same to save b1::a and b1::b in a struct S
+    S *s;
+    s = reinterpret_cast<S*>(&b1);
+    cout << "-- Struct S pointer to Base 1 object: " << endl;
+    cout << "member variables: " << s->s1 << ", " << s->s2 << endl;
 
     cout << "" << endl;
  
