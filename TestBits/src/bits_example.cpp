@@ -23,13 +23,22 @@ int main(int argc, char **argv)
     // Testing binary operators
     uint8_t a = 10; // 00001010
     uint8_t b = 2;  // 00000010
-    cout << "Testing binary operations for " << (int)a << " [" << bitset<8>(a) << "]" << " and " << (int)b << " [" << bitset<8>(b) << "]" << endl;
+    cout << "-- Testing binary operations for " << (int)a << " [" << bitset<8>(a) << "]" << " and " << (int)b << " [" << bitset<8>(b) << "]" << endl;
     cout << "Binary 'and'    is &:  " << bitset<8>( a & b ) << endl;
     cout << "Binary 'or'     is |:  " << bitset<8>( a | b ) << endl;
     cout << "Binary 'xor'    is ^:  " << bitset<8>( a ^ b ) << endl;
     cout << "Binary 'Lshift' is <<: " << bitset<8>( a << 1 ) << endl;
     cout << "Binary 'Rshift' is >>: " << bitset<8>( a >> 1 ) << endl;
     cout << "Binary '!'      is ~:  " << bitset<8>( ~a ) << endl;
+    cout << " " << endl;
+
+    // Testing bits shifting
+    cout << "-- Testing binary shifting" << endl;
+    int8_t max_neg = -128; // (1)0000000  // Notice that the (1) is the sign bit
+    cout << "Binary max negative:  " << bitset<8>( max_neg ) << endl;
+    int8_t zero = max_neg << 1;
+    cout << "Binary zero:  " << bitset<8>( zero ) << endl;
+    
 
     return 0;
 }
