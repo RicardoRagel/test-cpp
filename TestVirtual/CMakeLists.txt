@@ -11,3 +11,4 @@ set(CMAKE_CXX_STANDARD 11)
 # Example programs
 add_executable(test_virtual src/virtual_example.cpp)
 add_executable(test_pure_virtual src/pure_virtual_example.cpp)
+add_executable(test_pure_virtual_usage_example src/pure_virtual_usage_example.cpp)
