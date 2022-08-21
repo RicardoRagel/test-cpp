@@ -32,7 +32,7 @@ int main(int argc, char **argv)
     cout << "" << endl;
 
     // Getting a function pointer to the class method (with the same args, so using _1 and _2)
-    // Take note that it is neccessary to pass the class method reference and the object reference separatelly.
+    // Take note that it is necessary to pass the class method reference and the object reference separately.
     A a;
     std::function<float(int16_t, int16_t)> methodPtr = std::bind(&A::method, &a, _1, _2);
 
