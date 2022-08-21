@@ -85,11 +85,16 @@ int main(int argc, char **argv)
     cout << "(main) Test Virtual:" << endl;
     cout << "--------------------" << endl;
 
-    // cout << endl << "* Base class and Derived class will call they our (override) functions" << endl;
-    // A a;
-    // a.normal_fun();
-    // B b;
-    // b.normal_fun();
+    cout << endl << "* Base class and Derived class will call they our (override) functions" << endl;
+    A a;
+    a.normal_fun();
+    a.virtual_fun();
+    B b;
+    b.normal_fun();
+    b.virtual_fun();
+    A* a_ptr = &b;
+    a_ptr->normal_fun(); 
+    a_ptr->virtual_fun(); 
 
     // cout << endl << "* Derived class can be saved in a Base class variable, but then the function called will be the base one due to the type of the variable:" << endl;
     // B b;
@@ -109,12 +114,14 @@ int main(int argc, char **argv)
     
     // B b;
     // A* a = &b; 
+    
     // or 
-    A* a = new B();
-    a->normal_fun();
-    a->virtual_fun(); // This correctly calls to the derived one!
-    delete a;
-    cout << endl << "Notice also how when we delete the pointer, it only calls to the pointer type destructor. Why? Let's say that the destructor is not virtual, so it calls to the pointer type method" << endl;
+
+    // A* a = new B();
+    // a->normal_fun();
+    // a->virtual_fun(); // This correctly calls to the derived one!
+    // delete a;
+    // cout << endl << "Notice also how when we delete the pointer, it only calls to the pointer type destructor. Why? Let's say that the destructor is not virtual, so it calls to the pointer type method" << endl;
 
     return 0;
 }

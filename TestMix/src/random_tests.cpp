@@ -64,5 +64,20 @@ int main(int argc, char **argv)
     res = 3 * 9 % 7;
     cout << res << endl; // *, / and % has the same precedence because they are "interchable", is the same first apply the % that first apply the *
 
+
+    // Testing signed and unsigned conversion
+    uint8_t u8 = 2;
+    int8_t s8 = -44;
+    int8_t sr = u8 + s8; // unsigned + signed is always promoted to signed
+    printf("Result as signed:   %hhd\n", sr);
+    //printf("Result as unsigned: %hhu\n", sr);
+
+    uint8_t ur = u8 + s8; // unsigned + signed is always promoted to signed
+    //printf("Result as signed:   %hhd\n", ur);
+    printf("Result as unsigned: %hhu\n", ur);
+
+
+
+
     return 0;
 }
