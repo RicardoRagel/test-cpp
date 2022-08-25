@@ -5,8 +5,10 @@ project(test-cpp)
 # BUILD
 #########
 add_subdirectory(TestBits)
+add_subdirectory(TestAssertions)
 add_subdirectory(TestCastOperators)
 add_subdirectory(TestConst)
+add_subdirectory(TestConstexpr)
 add_subdirectory(TestCpp)
 add_subdirectory(TestExceptions)
 add_subdirectory(TestExplicit)
