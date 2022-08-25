@@ -5,6 +5,9 @@ Testing the C++ Keyword: static
 Basically, static means that it is a unique local (non extern) memory space. So, for example,
 all the object of a class with a static member (variable or function) will share this space.
 
+Notice the "local" or "non extern" property. It means also that a "static variable" or a 
+"static return_type function" can not be used (using extern for example) from any other linked
+translation unit (other header, other source file, ... linked)
 */
 
 #include <iostream> // std::cout
