@@ -1,14 +1,12 @@
 /*
 
-Testing the C++ lambda features
-
-[]       ()          {} 
-Capture  Parameters  Body
-
+Testing the C++ lambda features -> Capture values
 
 */
 
 #include <iostream> // std::cout
+#include <vector>
+#include <algorithm>
 
 // Aliases
 using namespace std;
