@@ -27,6 +27,11 @@ class A
         {
             cout << "(A) foo()" << endl;        
         }
+
+        virtual void virtual_foo()
+        {
+            cout << "(A) virtual_foo()" << endl;        
+        }
 };
 
 // Derived class from A: B
@@ -61,6 +66,11 @@ class C : public A, public B
         {
             cout << "(C) Default Destructor" << endl;
         };
+
+        void virtual_foo()
+        {
+            cout << "(C) virtual_foo()" << endl;  
+        }
 };
 
 int main(int argc, char **argv)
@@ -73,7 +83,8 @@ int main(int argc, char **argv)
     // c.foo();     // AMBIGUOUS
     
     A* a = &c;
-    a->foo();       // For sure, this is the A's one.
+    a->foo();           // For sure, this is the A's one.
+    a->virtual_foo();   // And this should go to the C's one
 
     return 0;
 }
