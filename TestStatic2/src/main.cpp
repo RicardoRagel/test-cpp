@@ -20,7 +20,7 @@ int main(int argc, char **argv)
     std::cout << "Static variables class members can be accessed with no objects (if public): " << Class::variable << endl;
     std::cout << "Static functions class members can be accessed with no objects (if public): " << Class::getStaticVariable() << endl;
 
-    // WE CAN NOT CALL TO A STATIC FUNCTION DEFINED IN ANOTHER FILE.
+    // WE CANNOT CALL TO A STATIC FUNCTION DEFINED IN ANOTHER FILE, ALTHOUGH IT IS IN THE HEADER
     non_static_print();
     // static_print(); 
     
