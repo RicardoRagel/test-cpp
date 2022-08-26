@@ -12,7 +12,6 @@ static void static_print()
     std::cout << " -- Aloha, I am the static print -- " << std::endl;
 };
 
-
 // Defining Class
 Class::Class()
 {
@@ -31,3 +30,15 @@ void Class::callStaticPrint()
 {
     static_print();
 }
+
+// We define it here, but it will be used in the main.cpp
+int extern_global_var = 33;
+
+// UNNAMED NAMESPACE: avoid any other source file access to it
+namespace
+{
+    int unnamed_global_var = 1234;
+}
+
+// Let's also add this to be accessible with extern
+int named_global_var = 5678;

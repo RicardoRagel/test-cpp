@@ -16,3 +16,7 @@ class Class
         
         void callStaticPrint();
 };
+
+
+// A variable to be used in all the source files (defined in Class.cpp and used in main.cpp)
+extern int extern_global_var;

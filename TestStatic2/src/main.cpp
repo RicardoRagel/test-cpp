@@ -6,7 +6,7 @@ Testing the C++ Keyword: static
 
 #include <iostream> // std::cout
 
-#include "Class.hpp"
+#include "Class.hpp"  // Notice it is declaring "extern int extern_global_var;"
 
 // Aliases
 using namespace std;
@@ -27,6 +27,17 @@ int main(int argc, char **argv)
     // A STATIC FUNCTION OR VARIABLE (NON-MEMBER OF A CLASS) CAN ONLY BE CALLED FROM HIS OWN LOCAL FILE
     Class obj;
     obj.callStaticPrint();
+
+    // Using the extern variable
+    cout << "Global var: " << extern_global_var << endl;
+
+    // Accessing to the Class.cpp named variable
+    extern int named_global_var;
+    cout << "Named namespace Global var: " << named_global_var << endl;
+
+    // Trying to access to the unnamed namespace variable -> LINKING FAIL
+    // extern int unnamed_global_var;
+    // cout << "Unnamed namespace Global var: " << unnamed_global_var << endl;
 
     return 0;
 }
