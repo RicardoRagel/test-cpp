@@ -47,5 +47,18 @@ int main(int argc, char **argv)
 
     cout << "" << endl;
 
+    float fl = 10;
+    int32_t i32 = static_cast<int32_t>(fl);
+    cout << "Float: " << fl << " to Int32t: " << i32 << endl;
+    int8_t i8 = static_cast<int8_t>(fl);
+    cout << "Float: " << fl << " to Int8t: " << (int)i8 << endl; // cast here only for cout
+    fl = 1000;
+    i32 = static_cast<int32_t>(fl);
+    cout << "Float: " << fl << " to Int32t: " << i32 << endl;
+    i8 = static_cast<int8_t>(fl);
+    cout << "Float: " << fl << " to Int8t: " << (int)i8 << endl; // cast here only for cout
+
+    
+
     return 0;
 }
