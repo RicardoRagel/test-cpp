@@ -2,9 +2,9 @@
 
 Testing the C++ std::unique function
 
-It simply removes duplicated values in a row in a container. However, it doesn't change the
-container size, so the elements at the end will be "garbage" with the same values that these
-elements have before the operation.
+It simply removes duplicated values in a row in a container. However, as many of the STL  
+algorithms it doesn't change the container size, so the elements at the end will be "garbage" 
+with the same values that these elements had before the operation.
 
 To remove then, you can use the result of this operation, that is an iterator pointing to
 the first of these elements.
